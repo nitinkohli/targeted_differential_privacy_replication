@@ -35,8 +35,18 @@ togo_data_size = (4201, 10)
 ## Create targeting variable of consumption from uniform [0,1)
 targeting_variable = np.random.random(size = togo_data_size[0])
 
-## Create features from uniform, tracking with the consumption variable
-features = [pd.DataFrame(np.random.uniform(low = -1, high = 1, size = togo_data_size[1]) - targeting_variable[i]).T for i in range(len(targeting_variable))]
+## Create features from uniform, tracking with the consumption variable, with 100 "distinct" and 5 "very distinct individuals" introduced
+features = [pd.DataFrame(np.random.uniform(low = -0.5, high = 0.5, size = togo_data_size[1]) - targeting_variable[i]).T for i in range(len(targeting_variable) - 105)]
+
+for i in range(100):
+	point = targeting_variable[len(targeting_variable) - (i+1)]
+	features.append(pd.DataFrame([point]*togo_data_size[1]).T)
+
+features.append(pd.DataFrame([1.5]*togo_data_size[1]).T)
+features.append(pd.DataFrame([-1.5]*togo_data_size[1]).T)
+features.append(pd.DataFrame([0]*togo_data_size[1]).T)
+features.append(pd.DataFrame([1.5]*int(togo_data_size[1]/2) + [-1.5]*int(togo_data_size[1]/2)).T) ## this only works when the number of features is even
+features.append(pd.DataFrame([0.75]*int(togo_data_size[1]/2) + [-0.75]*int(togo_data_size[1]/2)).T) ## this only works when the number of features is even
 
 features = pd.concat(features)
 
