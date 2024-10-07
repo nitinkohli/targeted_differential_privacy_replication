@@ -10,17 +10,28 @@ As noted in our manuscript, the mobile phone datasets from Togo and Nigeria cont
 
 Thie demo was developed and tested using Python 3.11.5 on macOS 14.6.1. 
 
+To use this demo, first `pip-install` the following packages.
+
+- `numpy` (1.24.3)
+- `pandas` (2.0.3)
+- `anonymeter`
+
+Next, install the following from github.
+- `mondrian` via https://github.com/Andrew0133/Mondrian-k-anonimity
+
 ## Installation Guide
+
+After installing the necessary packages, the code will run out of the box (using the data files located in the data subfolder). The install-time should be near instantenous. Outputs will be written to the outputs subfolder, divided into output folders for `prediction_metrics` and `privacy_metrics`. 
 
 ## Demo and Instructions for Use
 
-To get the accuracy metrics for our private projection approach on the Demo data, naviate to `Scripts/prediction_measurements` and run:
+To get the accuracy metrics for our private projection approach on the Demo data (as well as the baseline level of accuracy), naviate to `Scripts/prediction_measurements` and run:
 
 `python prediction_metrics.py`
 
 This should run in less than 1 minute. The expected outputs can be found in `Outputs/prediction_metrics`.
 
-To get the privacy metrics for our private projection approach on the Demo data, naviate to `Scripts/privacy_measurements` and run the following two commands:
+To get the privacy metrics for our private projection approach on the Demo data (as well as the baseline level of accuracy), naviate to `Scripts/privacy_measurements` and run the following two commands:
 
 `python measure_attribute_inference`
 
