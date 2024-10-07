@@ -10,13 +10,13 @@ As noted in our manuscript, the mobile phone datasets from Togo and Nigeria cont
 
 Thie demo was developed and tested using Python 3.11.5 on macOS 14.6.1. 
 
-To use this demo, first `pip-install` the following packages.
+To use this demo, first `pip install` the following packages.
 
 - `numpy` (1.24.3)
 - `pandas` (2.0.3)
 - `anonymeter`
 
-Next, install the following from github.
+Next, install the following from github. We use this as a point-of-comparison for the accuracy that existing privacy-enhancing technologies can offer.
 - `mondrian` via https://github.com/Andrew0133/Mondrian-k-anonimity
 
 ## Installation Guide
