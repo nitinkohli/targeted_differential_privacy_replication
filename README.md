@@ -33,20 +33,20 @@ After installing the necessary packages, the code will run out of the box (using
 
 ### Accuracy Metrics
 
-To get the accuracy metrics for our private projection approach on the Demo data (as well as the baseline level of accuracy), naviate to `Scripts/prediction_measurements` and run:
+To get the accuracy metrics for our private projection approach on the Demo data (as well as the baseline level of accuracy), naviate to `scripts/prediction_measurements` and run:
 
 `python prediction_metrics.py`
 
-This should run in less than 1 minute. The expected outputs can be found in `Outputs/prediction_metrics`.
+This should run in less than 1 minute. The expected outputs can be found in `outputs/prediction_metrics`.
 
 ### Privacy Metrics
 
-To get the privacy metrics for our private projection approach on the Demo data (as well as the baseline level of accuracy), naviate to `Scripts/privacy_measurements` and run the following two commands:
+To get the privacy metrics for our private projection approach on the Demo data (as well as the baseline level of accuracy), naviate to `scripts/privacy_measurements` and run the following two commands:
 
 `python measure_attribute_inference`
 
 `python measure_pso.py`
 
-The first scripts runs in ~1 minute, whereas the second is more computationally intenstive and runs in 10 mins. The expected outputs can be found in `Outputs/privacy_metrics`.
+The first scripts runs in ~1 minute, whereas the second is more computationally intenstive and runs in 10 mins. The expected outputs can be found in `outputs/privacy_metrics`.
 
 
