@@ -21,9 +21,15 @@ To use this demo, first `pip install` the following packages.
 
 ## Installation Guide
 
-After installing the necessary packages, the code will run out of the box (using the data files located in the data subfolder). The install-time should be near instantenous. Outputs will be written to the outputs subfolder, divided into output folders for `prediction_metrics` and `privacy_metrics`. 
+This repo can be installed via 
+
+`git clone https://github.com/nitinkohli/targeted_differential_privacy_replication/` 
+
+The install-time should be near instantenous.
 
 ## Demo and Instructions for Use
+
+After installing the necessary packages, the code will run out of the box (using the data files located in the data subfolder). Outputs will be written to the outputs subfolder, divided into output folders for `prediction_metrics` and `privacy_metrics`. 
 
 ### Accuracy Metrics
 
