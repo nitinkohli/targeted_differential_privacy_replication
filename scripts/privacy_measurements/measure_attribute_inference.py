@@ -7,7 +7,7 @@ input_data_name = "replication_input.csv"
 
 ### Example parameters set below to loop over
 
-B_params = [0.1, 0.25, 0.5, 1, 2]
+B_params = [0.05, 0.25, 0.5, 1, 2]
 epsilon_1 = 3
 delta_1 = 0.00015
 epsilon_2 = 0.9999
@@ -110,7 +110,7 @@ print(">>> Measuring Inference Risk of Privatized Data")
 private_repo = []
 
 for B in B_params:
-	for attack_approach in ["but_one", "half", "one"]:
+	for attack_approach in ["all_but_one", "half", "one"]:
 		print("----------------------------------------------")
 		print("*-> Running Attack Appraoch " + attack_approach + " for B = " + str(B))
 		priv_res = priv_simulation_consolidator(features_l2, sim_size, attack_approach, epsilon_1, delta_1, epsilon_2, delta_2, k, B)

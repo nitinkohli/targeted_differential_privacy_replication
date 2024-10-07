@@ -6,7 +6,7 @@ input_data_name = "replication_input.csv"
 
 ### Example parameters set below to loop over
 
-B_params = [0.1, 0.25, 0.5, 1, 2]
+B_params = [0.05, 0.25, 0.5, 1, 2]
 epsilon_1 = 3
 delta_1 = 0.00015
 epsilon_2 = 0.9999
