@@ -1,0 +1,2 @@
+B,epsilon_1,epsilon_2,delta_1,delta_2,accuracy,tpr,fpr,tnr,fnr,precision
+Non-Private Baseline,Non-Private Baseline,Non-Private Baseline,Non-Private Baseline,Non-Private Baseline,0.9095430609818245,0.8442622950819672,0.06373927804570953,0.9362607219542906,0.1557377049180328,0.8442622950819672
