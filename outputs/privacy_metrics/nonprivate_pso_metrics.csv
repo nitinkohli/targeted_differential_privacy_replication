@@ -1,2 +1,2 @@
 sim_size,B,epsilon_1,delta_1,epsilon_2,delta_2,k,avg_priv_10_risk,sd_priv_10_risk,avg_priv_33_risk,sd_priv_33_risk,avg_priv_50_risk,sd_priv_50_risk,avg_priv_67_risk,sd_priv_67_risk,avg_priv_100_risk,sd_priv_100_risk
-Non-Private Baseline,Non-Private Baseline,Non-Private Baseline,Non-Private Baseline,Non-Private Baseline,Non-Private Baseline,Non-Private Baseline,1.0,0,1.0,0,0.9869078790764104,0,0.8398000476077124,0,0.07164960723637229,0
+Non-Private Baseline,Non-Private Baseline,Non-Private Baseline,Non-Private Baseline,Non-Private Baseline,Non-Private Baseline,Non-Private Baseline,0.9759581052130445,0,0.9735777195905737,0,0.8831230659366818,0,0.3651511544870269,0,0.0016662699357295882,0
