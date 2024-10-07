@@ -16,8 +16,8 @@ To use this demo, first `pip install` the following packages.
 - `pandas` (2.0.3)
 - `anonymeter`
 
-[comment]: <> Next, install the following from github. We use this as a point-of-comparison for the accuracy that existing privacy-enhancing technologies can offer.
-[comment]: <> - `mondrian` via https://github.com/Andrew0133/Mondrian-k-anonimity
+<!--Text--> Next, install the following from github. We use this as a point-of-comparison for the accuracy that existing privacy-enhancing technologies can offer.
+<!--Text--> - `mondrian` via https://github.com/Andrew0133/Mondrian-k-anonimity
 
 ## Installation Guide
 
