@@ -4,15 +4,15 @@
 
 This repository contains replication code for the paper "Enabling Humantiarian Applications with Targeted Differential Privacy" by Nitin Kohli and Joshua Blumenstock. This README provides information about the code structure and the analyss performed in the manuscript.
 
+As noted in our manuscript, the mobile phone datasets from Togo and Nigeria contain detailed information on billions of mobile phone transactions. These data contain proprietary and confidential information belonging to a private telecommunications operator and cannot be publicly released. Consequently, for this demo we provide a sample input dataset in the `Data` folder called `replication_input.csv`.
+
 ## System Requirements
+
+Thie demo was developed and tested using Python 3.11.5 on macOS 14.6.1. 
 
 ## Installation Guide
 
 ## Demo and Instructions for Use
-
-The mobile phone datasets from Togo and Nigeria contain detailed information on billions of mobile phone transactions. These data contain proprietary and confidential information belonging to a private telecommunications operator and cannot be publicly released. 
-
-As such, for this demo we provide a sample input dataset in the `Data` folder called `replication_input.csv`. 
 
 To get the accuracy metrics for our private projection approach on the Demo data, naviate to `Scripts/prediction_measurements` and run:
 
