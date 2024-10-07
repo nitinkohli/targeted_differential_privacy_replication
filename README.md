@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This repository contains replication code for the paper "Enabling Humantiarian Applications with Targeted Differential Privacy" by Nitin Kohli and Joshua Blumenstock (https://arxiv.org/pdf/2408.13424). This README provides information about the code structure and the analyss performed in the manuscript.
+This repository contains replication code for the paper "Enabling Humantiarian Applications with Targeted Differential Privacy" by Nitin Kohli and Joshua Blumenstock (https://arxiv.org/pdf/2408.13424). This README provides information about the code structure and the analyses performed in our paper.
 
-As noted in our manuscript, the mobile phone datasets from Togo and Nigeria contain detailed information on billions of mobile phone transactions. These data contain proprietary and confidential information belonging to a private telecommunications operator and cannot be publicly released. Consequently, for this demo we provide a sample input dataset in the `Data` folder called `replication_input.csv`.
+As noted in our manuscript, the mobile phone datasets we use from Togo and Nigeria are derived from call detail records that contain detailed information on billions of mobile phone transactions. Additionally, these data contain proprietary and confidential information belonging to a private telecommunications operator and cannot be publicly released. Consequently, for this demo we provide a sample input dataset in the `Data` folder called `replication_input.csv`.
 
 ## System Requirements
 
