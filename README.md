@@ -16,8 +16,8 @@ To use this demo, first `pip install` the following packages.
 - `pandas` (2.0.3)
 - `anonymeter`
 
-Next, install the following from github. We use this as a point-of-comparison for the accuracy that existing privacy-enhancing technologies can offer.
-- `mondrian` via https://github.com/Andrew0133/Mondrian-k-anonimity
+<> Next, install the following from github. We use this as a point-of-comparison for the accuracy that existing privacy-enhancing technologies can offer.
+<> - `mondrian` via https://github.com/Andrew0133/Mondrian-k-anonimity
 
 ## Installation Guide
 
@@ -25,11 +25,15 @@ After installing the necessary packages, the code will run out of the box (using
 
 ## Demo and Instructions for Use
 
+### Accuracy Metrics
+
 To get the accuracy metrics for our private projection approach on the Demo data (as well as the baseline level of accuracy), naviate to `Scripts/prediction_measurements` and run:
 
 `python prediction_metrics.py`
 
 This should run in less than 1 minute. The expected outputs can be found in `Outputs/prediction_metrics`.
+
+### Privacy Metrics
 
 To get the privacy metrics for our private projection approach on the Demo data (as well as the baseline level of accuracy), naviate to `Scripts/privacy_measurements` and run the following two commands:
 
