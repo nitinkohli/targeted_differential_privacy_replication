@@ -29,7 +29,7 @@ input_data_folder = '../../data'
 # -*- Create Replication Input Data -*- #
 #---------------------------------------#
 
-## As noted in the paper, our Togo dataset contains 10 features on 4,201 individuals
+## For our example demo datasets, we mimic the shape of the Togo dataset from our paper, which has  10 features on 4,201 individuals
 togo_data_size = (4201, 10)
 
 ## Create targeting variable of consumption from uniform [0,1)

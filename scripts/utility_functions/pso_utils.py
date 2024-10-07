@@ -8,6 +8,23 @@ jitter_factor_array = [0.1, 0.33, 0.5, 0.67, 1]
 
 '''
 
+Function: multi_sd
+
+Inputs:
+
+	- row_Syn_num = the row number of the synthetic data
+	- X_Syn = synthetic data that the adversary can leverage to build their predicate
+	- X_Train = the original dataset, which we only use to check if the predicate constructed singled-out an individual
+
+Purpose: 
+	
+	- Given a row number from the synthetic dataset, determine if the net-attack with the jitter_factor_array singles out an individual
+
+Outputs: 
+
+	- An array of length len(jitter_factor_array) with +1 in position i if the jitter factor at i isolated an individual, and -1 otherwise
+
+
 '''
 
 def multi_sd(row_Syn_num, X_Syn, X_Train):
@@ -38,6 +55,20 @@ def multi_sd(row_Syn_num, X_Syn, X_Train):
 
 '''
 
+Function: all_rows_multi_sd
+
+Inputs: 
+	- X_Syn = synthetic data that the adversary can leverage to build their predicate
+	- X_Train = the original dataset, which we only use to check if the predicate constructed singled-out an individual
+
+Purpose: 
+
+	- Apply multi_sd(row_Syn_num, X_Syn, X_Train) to all rows of the synthetic data X_Syn
+
+Outputs: 
+
+	- An array of length len(jitter_factor_array) with the proportion of individuals singled-out by the jitter factor in position i
+
 '''
 
 def all_rows_multi_sd(X_Syn, X_Train):
@@ -52,6 +83,19 @@ def all_rows_multi_sd(X_Syn, X_Train):
 
 
 '''
+
+Function: pso_nonpriv_run
+
+Inputs:
+	-df_input = nonprivatized dataset to test for singling-out risk
+
+Purpose: 
+
+	- Compute the PSO risk from the non-privatized data. Note that in this setting, setting X_Syn = X_Train in all_rows_multi_sd above does so.
+
+Output: 
+
+	- Dictionary with summary statistics about the singling-out risk
 
 '''
 
@@ -81,7 +125,23 @@ def pso_nonpriv_run(df_input):
     }
     return result_dict
 
+
 '''
+
+Function: sim_single_priv_run
+
+Inputs:
+
+	- df_input = nonprivate data that we wish to privatize, and then test for singling-out risk
+	- epsilon_1, delta_1, epsilon_2, delta_2, k, B =  privacy parameters of priv_projections() function
+
+Purpose: 
+	
+	- Determine the singling-out risk for the entire privatized data. Apply the multi_sd() function after we have privatized using priv_projections()
+
+Output:
+
+	- Dictionary with summary statistics about the singling-out risk
 
 '''
 
@@ -95,6 +155,21 @@ def sim_single_priv_run(df_input, epsilon_1, delta_1, epsilon_2, delta_2, k, B):
     return(pso_multisd_results)
 
 '''
+
+Function: sim_full_run
+
+Inputs:
+	- same as sim_single_priv_run, with one addition (below)
+	- sim_size = number of times to regerenate a privatized dataset (Since the privatization approach uses randomness, 
+				this can give a more accurate sense of the singling-out risk)
+
+Purpose: 
+
+	- Compute the PSO risk from the privatized data over multiple simulations. 
+
+Output:
+
+	- Dictionary with summary statistics about the singling-out risk
 
 '''
 

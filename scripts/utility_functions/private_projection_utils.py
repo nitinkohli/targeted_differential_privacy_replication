@@ -54,21 +54,21 @@ Function: priv_projections
 
 Inputs: 
 	
-	- nonprivate_df
-	- epsilon_1
-	- delta_1
-	- epsilon_2
-	- delta_2
-	- k
-	- B
+	- nonprivate_df = dataframe to be privatized (n rows and d columns)
+	- epsilon_1 =  epsilon parameter for the privatization of the random projection
+	- delta_1 = delta parameter of the privatization of the random projection
+	- epsilon_2 = epsilon parameter of the covraiance privatization
+	- delta_2 = delta parameter of the covariance privatization
+	- k = dimensionality of the randomized projection
+	- B = diameter of indistinguishability (note: when rows are normalized in the L2-unit ball, setting B = 2 yields classic differential privacy)
 
 Purpose:
 
-	- 
+	- Compute the privatized version of nonprivate_df with (B, epsilon_1 + epsilon_2, delta_1 + delta_2)-targeted differential privacy
 
 Outputs:
 	
-	- 
+	- privatized numpy array with dataframe to be privatized (n rows and d columns)
 
 '''
 

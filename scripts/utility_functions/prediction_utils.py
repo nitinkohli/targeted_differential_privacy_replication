@@ -1,20 +1,22 @@
-#==================================#
-# =*= prediction_utils_togo.py =*= #
-#==================================#
+#=============================#
+# =*= prediction_utils.py =*= #
+#=============================#
 
 '''
 
-Function: 
+Function: L2_normalizer
 
 Inputs: 
+
+    - X = numpy array
     
 Purpose:
 
-    - 
+    - Rescale each row to have L2 norm at most 1
 
 Outputs:
     
-    - 
+    -  A dataframe with each row rescaled to have L2 norm at most 1
 
 '''
 
@@ -33,22 +35,26 @@ def L2_normalizer(X):
 
 '''
 
-Function: 
+Function: model_stats_generator
 
 Inputs: 
+
+    - y_actual = true targets
+    - y_pred = predicted targets
+    - targeting_threshold = threshold (between 0 and 1) used to do rank-based classication on the outputs (e.g., the botttom 100*(targeting_threshold) are classified as 1)
 	
 Purpose:
 
-	- 
+	- Compute the stats of the predictions
 
 Outputs:
 	
-	- 
+	- Dataframe of summary statistics 
 
 '''
 
 
-def togo_model_stats_generator(y_actual, y_pred, targeting_threshold):
+def model_stats_generator(y_actual, y_pred, targeting_threshold):
     repo = {
     'accuracy': [],
     'tpr': [], #P(C = 1 | Y = 1)
@@ -79,17 +85,20 @@ def togo_model_stats_generator(y_actual, y_pred, targeting_threshold):
 
 '''
 
-Function: 
+Function: process_nonprivate
 
 Inputs: 
+
+    - df_features = features used to build ML model (in K-Fold CV sense)
+    - y = targets to build model (in K-Fold CV sense)
 	
 Purpose:
 
-	- 
+	- Compute the accuracy metrics of nonprivatized approach (as a baseline)
 
 Outputs:
 	
-	- 
+	- dataframe of summary statistics
 
 '''
 
@@ -110,7 +119,7 @@ def process_nonprivate(df_features, y):
         reg_top.fit(X_train, y_train)
         y_pred = reg_top.predict(X_test)
         ## generate stats
-        nonpriv_stats_per_fold = togo_model_stats_generator(y_test.tolist(), y_pred, targeting_threshold)
+        nonpriv_stats_per_fold = model_stats_generator(y_test.tolist(), y_pred, targeting_threshold)
         ## setup information for writing up results
         nonpriv_stats_per_fold['fold'] = fold
         nonpriv_stats_per_fold['B'] = 'Non-Private Baseline'
@@ -127,6 +136,22 @@ def process_nonprivate(df_features, y):
 
 
 '''
+
+Function: single_shot_process_private
+
+Inputs: 
+
+    - df_features = features used to build ML model (in K-Fold CV sense)
+    - y = targets to build model (in K-Fold CV sense)
+    - epsilon_1, delta_1, epsilon_2, delta_2, k, B = privacy parameters to priv_projections()
+    
+Purpose:
+
+    - Compute the accuracy metrics of ML using privactized approach 
+
+Outputs:
+    
+    - dataframe of summary statistics
 
 '''
 
@@ -147,7 +172,7 @@ def single_shot_process_private(df_features, y, epsilon_1, delta_1, epsilon_2, d
         reg_top_priv = Ridge()
         reg_top_priv.fit(X_train_priv, y_train)
         y_priv = reg_top_priv.predict(X_test_priv)
-        priv_stats = togo_model_stats_generator(y_test.tolist(), y_priv, targeting_threshold)
+        priv_stats = model_stats_generator(y_test.tolist(), y_priv, targeting_threshold)
         priv_stats['fold'] = fold
         priv_stats['B'] = B
         priv_stats['epsilon_1'] = epsilon_1
@@ -159,6 +184,26 @@ def single_shot_process_private(df_features, y, epsilon_1, delta_1, epsilon_2, d
     priv_df_single = fold_performance_aggregation(sim_priv_df, agg_over_params, stat_cols)
     return(priv_df_single)
 
+'''
+
+Function: process_private
+
+Inputs: 
+
+    - df_features = features used to build ML model (in K-Fold CV sense)
+    - y = targets to build model (in K-Fold CV sense)
+    - sim_size = number of times to replicate the privatization generation process
+    - epsilon_1, delta_1, epsilon_2, delta_2, k, B = privacy parameters to priv_projections()
+    
+Purpose:
+
+    - Compute the accuracy metrics of ML using privactized approach 
+
+Outputs:
+    
+    - dataframe of summary statistics
+
+'''
 
 def process_private(df_features, y, sim_size, epsilon_1, delta_1, epsilon_2, delta_2, k, B):
     priv_df_repo = []

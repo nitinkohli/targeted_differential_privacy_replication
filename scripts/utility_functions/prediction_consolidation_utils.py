@@ -3,12 +3,17 @@
 #===========================================#
 
 '''
+Function: fold_performance_aggregation
 
-'''
+Inputs
 
+    - sim_df = datafrme of prediction performance results
+    - agg_params = paramters to aggregate over
+    - stat_perf = statitic names (as a list)
 
+Purpose
 
-'''
+    - Computes the average prediction performance over the K-Fold Validation
 
 '''
 
@@ -22,6 +27,17 @@ def fold_performance_aggregation(sim_df, agg_params, stat_perf):
     return stat_results
 
 '''
+Function: simulation_performance_aggregation
+
+Inputs
+
+    - sim_df = datafrme of prediction performance results
+    - agg_params = paramters to aggregate over
+    - stat_perf = statitic names (as a list)
+
+Purpose
+
+    - Computes the average (and standard deviatio of) prediction performance over the K-Fold Validation
 
 '''
 
