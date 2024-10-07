@@ -16,20 +16,17 @@ To use this demo, first `pip install` the following packages.
 - `pandas` (2.0.3)
 - `anonymeter` (1.0.0)
 
-<!-- Next, install the following from github. We use this as a point-of-comparison for the accuracy that existing privacy-enhancing technologies can offer. -->
-<!-- - `mondrian` via https://github.com/Andrew0133/Mondrian-k-anonimity -->
-
 ## Installation Guide
 
 This repo can be installed via 
 
 `git clone https://github.com/nitinkohli/targeted_differential_privacy_replication/` 
 
-The install-time should be near instantenous.
+The install-time of the `git clone` should be near instantenous.
 
 ## Demo and Instructions for Use
 
-After installing the necessary packages, the code will run out of the box (using the data files located in the data subfolder). Outputs will be written to the outputs subfolder, divided into output folders for `prediction_metrics` and `privacy_metrics`. 
+After installing the necessary packages and this repository, our code will run out of the box (using the data files located in the data subfolder). Outputs will be written to the outputs subfolder, divided into output folders for `prediction_metrics` and `privacy_metrics`. 
 
 ### Accuracy Metrics
 
@@ -47,7 +44,7 @@ To get the privacy metrics for our private projection approach on the Demo data 
 
 `python measure_pso.py`
 
-The first scripts runs in ~1 minute, whereas the second is more computationally intenstive and runs in ~10 mins. The expected outputs can be found in `outputs/privacy_metrics`. Similar to accuracy metrics script, example parameters are set at the top of each of these scripts to provide examples of the codes behavior and expected outputs.
+The first scripts runs in ~2 minutes, whereas the second is more computationally intenstive and runs in ~10 minutes. The expected outputs can be found in `outputs/privacy_metrics`. Similar to accuracy metrics script, example parameters are set at the top of each of these scripts to provide examples of the codes behavior and expected outputs.
 
 
 
