@@ -10,4 +10,10 @@ This repository contains replication code for the paper "Enabling Humantiarian A
 
 ## Demo
 
+`python prediction_metrics.py`
+
+`python measure_attribute_inference`
+
+`python measure_pso.py`
+
 ## Instructions for Use
