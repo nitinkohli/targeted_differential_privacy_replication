@@ -47,7 +47,7 @@ To get the privacy metrics for our private projection approach on the Demo data 
 
 `python measure_pso.py`
 
-The first scripts runs in ~1 minute, whereas the second is more computationally intenstive and runs in 10 mins. The expected outputs can be found in `outputs/privacy_metrics`. Similar to accuracy metrics script, example parameters are set at the top of each of these scripts to provide examples of the codes behavior and expected outputs.
+The first scripts runs in ~1 minute, whereas the second is more computationally intenstive and runs in ~10 mins. The expected outputs can be found in `outputs/privacy_metrics`. Similar to accuracy metrics script, example parameters are set at the top of each of these scripts to provide examples of the codes behavior and expected outputs.
 
 
 
