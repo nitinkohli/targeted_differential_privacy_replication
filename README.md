@@ -1,4 +1,4 @@
-# Targeted Differential Privacy Replication Code
+# Targeted Differential Privacy Demonstration Code
 
 ## Introduction
 
